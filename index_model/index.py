@@ -1,5 +1,9 @@
 import datetime as dt
 import os
+
+from pathlib import Path
+
+from pathlib import Path
 import pandas as pd
 import numpy as np
 
@@ -9,7 +13,7 @@ class IndexModel:
         # Initialize Variables:
 
         # Folder Paath
-        self.fld = os.path.dirname(os.getcwd())
+        self.fld = Path(__file__).parent.parent
 
         # Stock Price Data
         self.stock_price_df = pd.read_csv(os.path.join(self.fld, 'data_sources', 'stock_prices.csv'))
@@ -105,4 +109,4 @@ class IndexModel:
 
 if __name__ == "__main__":
     a = IndexModel()
-    print(a.calc_index_level(dt.date(year=2020, month=1, day=1), dt.date(year=2020, month=12, day=31)))
+    #print(a.calc_index_level(dt.date(year=2020, month=1, day=1), dt.date(year=2020, month=12, day=31)))

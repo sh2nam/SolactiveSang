@@ -1,5 +1,4 @@
 import datetime as dt
-
 from index_model.index import IndexModel
 
 if __name__ == "__main__":
